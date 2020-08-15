@@ -1,5 +1,6 @@
 #include "..\lib\std_lib_facilities.h"
 
+// Authors note... I hate this. haha
 
 static string WriteLetter(string first_name, string last_name, int mode, char sex) {
 	if (mode == 0) {
@@ -21,9 +22,30 @@ static string WriteLetter(string first_name, string last_name, int mode, char se
 	}
 }
 
+void AgeDrill(int age) {
+	if (age <= 0 || age > 120) {
+		simple_error("Yeah you're a fookin liar!");
+	}
+	else if (age < 12) {
+		cout << "Next year you will be " << age++;
+		cout << "\nThis is a test.. what's age now? --->" << age;
+	}
+	else if (age == 17) {
+		cout << "Next year you will be able to vote... please commit voter fraud so you can help vote this cheeto in chief out...";
+	}
+	else if (age > 70) {
+		cout << "I hope you were allowed to retire...";
+	}
+	else {
+		cout << "You must be between 12 and 70 and not 17...";
+	}
+	return;
+}
+
 void FormLetterMain() {
 	string first_name, last_name;
-	char sex = 0;
+	char sex;
+	int age;
 
 	cout << "Enter your first name: ";
 	cin >> first_name;
@@ -31,7 +53,7 @@ void FormLetterMain() {
 	cout << "Enter your last name: ";
 	cin >> last_name;
 
-	cout << WriteLetter(first_name, last_name, 0, sex);
+	/*cout << WriteLetter(first_name, last_name, 0, sex);
 
 	cout << "\nNow enter the name of the person you would like to write to";
 	cout << "\nEnter their first name: ";
@@ -45,7 +67,13 @@ void FormLetterMain() {
 	cout << "\nNow we care about your friend's sex I guess...\nWhat's in your friends pants...? [m/f]";
 	cin >> sex;
 
-	cout << WriteLetter(first_name, last_name, 2, sex);
+	cout << WriteLetter(first_name, last_name, 2, sex);*/
+
+	cout << "alright we're gonna need to know how old you are now... Gonna need an INT! ";
+	cin >> age;
+
+	AgeDrill(age);
+
 
 	return;
 }
