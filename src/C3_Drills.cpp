@@ -22,7 +22,7 @@ static string WriteLetter(string first_name, string last_name, int mode, char se
 	}
 }
 
-void AgeDrill(int age) {
+static void AgeDrill(int age) {
 	if (age <= 0 || age > 120) {
 		simple_error("Yeah you're a fookin liar!");
 	}
@@ -42,16 +42,30 @@ void AgeDrill(int age) {
 	return;
 }
 
-void FormLetterMain() {
-	string first_name, last_name;
-	char sex;
-	int age;
+static void MilesToKm() {
+	int miles;
+	float km;
 
-	cout << "Enter your first name: ";
-	cin >> first_name;
+	cout << "How many miles do you have: ";
+	cin >> miles;
 
-	cout << "Enter your last name: ";
-	cin >> last_name;
+	km = miles * 1.609;
+
+	cout << "\n" << miles << " miles is actually " << km << " km. Yaay";
+
+	return;
+}
+
+void Chapter3Drills() {
+	//string first_name, last_name;
+	//char sex;
+	//int age;
+
+	//cout << "Enter your first name: ";
+	//cin >> first_name;
+
+	//cout << "Enter your last name: ";
+	//cin >> last_name;
 
 	/*cout << WriteLetter(first_name, last_name, 0, sex);
 
@@ -69,11 +83,12 @@ void FormLetterMain() {
 
 	cout << WriteLetter(first_name, last_name, 2, sex);*/
 
-	cout << "alright we're gonna need to know how old you are now... Gonna need an INT! ";
-	cin >> age;
+	//cout << "alright we're gonna need to know how old you are now... Gonna need an INT! ";
+	//cin >> age;
 
-	AgeDrill(age);
+	//AgeDrill(age);
 
+	MilesToKm();
 
 	return;
 }
