@@ -18,9 +18,15 @@
     <ClInclude Include="lib\std_lib_facilities.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Drills.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\C3_Drills.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

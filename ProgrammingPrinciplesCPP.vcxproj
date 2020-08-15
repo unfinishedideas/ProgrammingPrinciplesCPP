@@ -148,8 +148,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="lib\std_lib_facilities.h" />
+    <ClInclude Include="src\Drills.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\C3_Drills.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

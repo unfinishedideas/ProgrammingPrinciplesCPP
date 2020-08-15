@@ -1,6 +1,6 @@
-#include "..\lib\std_lib_facilities.h"
+#include "Drills.h"
 
 int main() {
-	std::cout << "Hello world";
+	FormLetterMain();
 	return 0;
 }
