@@ -2,7 +2,8 @@
 
 // Authors note... I hate this. haha
 
-static string WriteLetter(string first_name, string last_name, int mode, char sex) {
+static string WriteLetter(string first_name, string last_name, int mode, char sex) 
+{
 	if (mode == 0) {
 		return "Why hello " + first_name + " " + last_name + "\n" + "Welcome to C++\n";
 	} else if (mode == 1) {
@@ -22,7 +23,18 @@ static string WriteLetter(string first_name, string last_name, int mode, char se
 	}
 }
 
-static void AgeDrill(int age) {
+static bool oddOrEven(int testNum)
+{
+	if (testNum % 2 == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+static void AgeDrill(int age) 
+{
 	if (age <= 0 || age > 120) {
 		simple_error("Yeah you're a fookin liar!");
 	}
@@ -42,7 +54,8 @@ static void AgeDrill(int age) {
 	return;
 }
 
-static void MilesToKm() {
+static void MilesToKm() 
+{
 	int miles;
 	float km;
 
@@ -56,7 +69,16 @@ static void MilesToKm() {
 	return;
 }
 
-void Chapter3Drills() {
+void NumberSequencer() 
+{
+	int a, b, c;
+	int arr[3];
+	// Eeeehhhhhhh.. lazy.
+}
+
+void Chapter3Drills()
+{
+	cout << oddOrEven(2);
 	//string first_name, last_name;
 	//char sex;
 	//int age;
@@ -88,7 +110,8 @@ void Chapter3Drills() {
 
 	//AgeDrill(age);
 
-	MilesToKm();
+	//MilesToKm();
+	NumberSequencer();
 
 	return;
 }
