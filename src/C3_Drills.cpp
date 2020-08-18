@@ -69,16 +69,36 @@ static void MilesToKm()
 	return;
 }
 
-void NumberSequencer() 
+static void NumberSequencer() 
 {
 	int a, b, c;
 	int arr[3];
-	// Eeeehhhhhhh.. lazy.
+	// Eeeehhhhhhh.. too lazy.
+}
+
+static void WhatYourCoinsDoing(int halfDollars, int quarters, int dimes, int nickles, int pennies)
+{
+	int totalCents = (halfDollars * 50) + (quarters * 25) + (dimes * 10) + (nickles * 5) + pennies;
+	cout << "\n you have: " << totalCents << "c" << std::endl;
+	int dollarsFloat = totalCents / 100;
+	cout << "which is: $" << dollarsFloat;
 }
 
 void Chapter3Drills()
 {
-	cout << oddOrEven(2);
+	int halfDollars, quarters, dimes, nickles, pennies;
+	cout << "enter your coints\n" << "half dollas: ";
+	cin >> halfDollars;
+	cout << "\nquarts: ";
+	cin >> quarters;
+	cout << "\ndims: ";
+	cin >> dimes;
+	cout << "\nnicks: ";
+	cin >> nickles;
+	cout << "\npenises: ";
+	cin >> pennies;
+	WhatYourCoinsDoing(halfDollars, quarters, dimes, nickles, pennies);
+
 	//string first_name, last_name;
 	//char sex;
 	//int age;
