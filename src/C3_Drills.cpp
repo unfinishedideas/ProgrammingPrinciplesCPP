@@ -62,42 +62,42 @@ static void MilesToKm()
 	cout << "How many miles do you have: ";
 	cin >> miles;
 
-	km = miles * 1.609;
+	km = miles * 1.609f;
 
 	cout << "\n" << miles << " miles is actually " << km << " km. Yaay";
 
 	return;
 }
 
-static void NumberSequencer() 
-{
-	int a, b, c;
-	int arr[3];
-	// Eeeehhhhhhh.. too lazy.
-}
+//static void NumberSequencer() 
+//{
+//	int a, b, c;
+//	int arr[3];
+//	// Eeeehhhhhhh.. too lazy.
+//}
 
 static void WhatYourCoinsDoing(int halfDollars, int quarters, int dimes, int nickles, int pennies)
 {
 	int totalCents = (halfDollars * 50) + (quarters * 25) + (dimes * 10) + (nickles * 5) + pennies;
 	cout << "\nyou have: " << totalCents << "c" << std::endl;
-	float dollarsFloat = totalCents / (float)100;
+	float dollarsFloat = totalCents / 100.0f;
 	cout << "which is: $" << dollarsFloat;
 }
 
 void Chapter3Drills()
 {
-	int halfDollars, quarters, dimes, nickles, pennies;
-	cout << "enter your coints\n" << "half dollas: ";
-	cin >> halfDollars;
-	cout << "\nquarts: ";
-	cin >> quarters;
-	cout << "\ndims: ";
-	cin >> dimes;
-	cout << "\nnicks: ";
-	cin >> nickles;
-	cout << "\npenises: ";
-	cin >> pennies;
-	WhatYourCoinsDoing(halfDollars, quarters, dimes, nickles, pennies);
+	//int halfDollars, quarters, dimes, nickles, pennies;
+	//cout << "enter your coints\n" << "half dollas: ";
+	//cin >> halfDollars;
+	//cout << "\nquarts: ";
+	//cin >> quarters;
+	//cout << "\ndims: ";
+	//cin >> dimes;
+	//cout << "\nnicks: ";
+	//cin >> nickles;
+	//cout << "\npenises: ";
+	//cin >> pennies;
+	//WhatYourCoinsDoing(halfDollars, quarters, dimes, nickles, pennies);
 
 	//string first_name, last_name;
 	//char sex;
@@ -131,7 +131,6 @@ void Chapter3Drills()
 	//AgeDrill(age);
 
 	//MilesToKm();
-	NumberSequencer();
 
 	return;
 }
