@@ -79,8 +79,8 @@ static void NumberSequencer()
 static void WhatYourCoinsDoing(int halfDollars, int quarters, int dimes, int nickles, int pennies)
 {
 	int totalCents = (halfDollars * 50) + (quarters * 25) + (dimes * 10) + (nickles * 5) + pennies;
-	cout << "\n you have: " << totalCents << "c" << std::endl;
-	int dollarsFloat = totalCents / 100;
+	cout << "\nyou have: " << totalCents << "c" << std::endl;
+	float dollarsFloat = totalCents / (float)100;
 	cout << "which is: $" << dollarsFloat;
 }
 
