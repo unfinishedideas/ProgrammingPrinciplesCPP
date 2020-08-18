@@ -130,7 +130,7 @@ void Chapter3Drills()
 
 	//AgeDrill(age);
 
-	//MilesToKm();
+	MilesToKm();
 
 	return;
 }
