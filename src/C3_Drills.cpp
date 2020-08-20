@@ -1,10 +1,10 @@
 #include "..\lib\std_lib_facilities.h"
 
-static string WriteLetter(string first_name, string last_name, int mode, char sex);
-static bool oddOrEven(int testNum);
-static void AgeDrill(int age);
-static void MilesToKm();
-static void WhatYourCoinsDoing(int halfDollars, int quarters, int dimes, int nickles, int pennies);
+string WriteLetter(string first_name, string last_name, int mode, char sex);
+bool oddOrEven(int testNum);
+void AgeDrill(int age);
+void MilesToKm();
+void WhatYourCoinsDoing(int halfDollars, int quarters, int dimes, int nickles, int pennies);
 
 // Authors note... I hate this. haha
 void Chapter3Drills()
