@@ -7,7 +7,7 @@
 // Presented are the drills and TryThis exercises from Chapter4
 
 void sizeOfTypes(), currencyConverter(), charLooper(), crappySquare(), bigBrotherCensor();
-void drill1(), drill2(), drill3(), drill4(), drill5(), drill6(), drill7(), drill8(), drill8(), drill10(), drill11();
+void drill1(), drill2_and_3(), drill4(), drill5(), drill6(), drill7(), drill8(), drill8(), drill10(), drill11();
 
 
 void Chapter4Drills()
@@ -17,12 +17,11 @@ void Chapter4Drills()
 	//charLooper();
 	//crappySquare();
 	//bigBrotherCensor();
-	drill1();
-	//drill2();
-	//drill3();
+	//drill1();
+	//drill2_and_3();
 	//drill4();
 	//drill5();
-	//drill6();
+	drill6();
 	//drill7();
 	//drill8();
 	//drill9();
@@ -129,31 +128,84 @@ static void bigBrotherCensor()
 
 static void drill1()
 {
+	std::cout << "Gimme 2 of dem numbers:\n";
+
+	int val1, val2;
+	while (std::cin >> val1 >> val2)
+	{
+		std::cout << val1 << '\t' << val2 << '\n';
+	}
+
 	return;
 }
 
-static void drill2()
+static void drill2_and_3()
 {
-	return;
-}
+	std::cout << "Gimme 2 of dem numbers:\n";
 
-static void drill3()
-{
+	int val1, val2;
+	while (std::cin >> val1 >> val2)
+	{
+		if (val1 > val2) {
+			std::cout << val1 << " is larger than " << val2 << std::endl;
+		}
+		else if (val2 > val1) {
+			std::cout << val2 << " is larger than " << val1 << std::endl;
+		}
+		else {
+			std::cout << val1 << " & " << val2 << " are probably equal\n";
+		}
+	}
 	return;
 }
 
 static void drill4()
 {
+	std::cout << "Gimme 2 of dem numbers:\n";
+
+	double val1, val2;
+	while (std::cin >> val1 >> val2)
+	{
+		if (val1 > val2) {
+			std::cout << val1 << " is larger than " << val2 << std::endl;
+		}
+		else if (val2 > val1) {
+			std::cout << val2 << " is larger than " << val1 << std::endl;
+		}
+		else {
+			std::cout << val1 << " & " << val2 << " are probably equal\n";
+		}
+	}
 	return;
 }
 
 static void drill5()
 {
+	std::cout << "Gimme 2 of dem numbers:\n";
+
+	double val1, val2;
+	while (std::cin >> val1 >> val2)
+	{
+		if (val1 > val2) {
+			std::cout << val1 << " is larger than " << val2 << std::endl;
+		}
+		else if (val2 > val1) {
+			std::cout << val2 << " is larger than " << val1 << std::endl;
+		}
+		else {
+			std::cout << val1 << " & " << val2 << " are probably equal\n";
+		}
+		double diff = val1 - val2;
+		if (diff > 0 && diff < 1.0 / 100 || diff < 0 && diff > -1.0 / 100) {
+			std::cout << "The numbers are almost equal";
+		}
+	}
 	return;
 }
 
 static void drill6()
 {
+
 	return;
 }
 
