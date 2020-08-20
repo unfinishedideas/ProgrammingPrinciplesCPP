@@ -54,12 +54,13 @@ static void CurrencyConverter()
 
 void CharLooper()
 {
-	int num = 97;
+	char currentLetter = 'a';
+	char currentUppercase = 'A';
 	for (int i = 0; i < 26; i++)
 	{
-		char currentLetter = (char)num;
-		std::cout << currentLetter << "\t" << num << std::endl;
-		++num;
+		std::cout << currentLetter << "\t" << (int)currentLetter << "\t" << currentUppercase << "\t" << (int)currentUppercase << std::endl;
+		currentLetter += 1;
+		currentUppercase += 1;
 	}
 	return;
 }
