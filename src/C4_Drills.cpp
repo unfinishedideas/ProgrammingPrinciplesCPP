@@ -4,11 +4,11 @@
 // needed for sort
 #include <algorithm>
 
-void sizeOfTypes();
-void currencyConverter();
-void charLooper();
-void crappySquare();
-void bigBrotherCensor();
+// Presented are the drills and TryThis exercises from Chapter4
+
+void sizeOfTypes(), currencyConverter(), charLooper(), crappySquare(), bigBrotherCensor();
+void drill1(), drill2(), drill3(), drill4(), drill5(), drill6(), drill7(), drill8(), drill8(), drill10(), drill11();
+
 
 void Chapter4Drills()
 {
@@ -16,8 +16,18 @@ void Chapter4Drills()
 	//currencyConverter();
 	//charLooper();
 	//crappySquare();
-	bigBrotherCensor();
-
+	//bigBrotherCensor();
+	drill1();
+	//drill2();
+	//drill3();
+	//drill4();
+	//drill5();
+	//drill6();
+	//drill7();
+	//drill8();
+	//drill9();
+	//drill10();
+	//drill11();
 }
 
 static void sizeOfTypes()
@@ -112,5 +122,62 @@ static void bigBrotherCensor()
 				std::cout << words[i] << "\n";
 			}
 	
+	return;
+}
+
+// These drills are on page 126
+
+static void drill1()
+{
+	return;
+}
+
+static void drill2()
+{
+	return;
+}
+
+static void drill3()
+{
+	return;
+}
+
+static void drill4()
+{
+	return;
+}
+
+static void drill5()
+{
+	return;
+}
+
+static void drill6()
+{
+	return;
+}
+
+static void drill7()
+{
+	return;
+}
+
+static void drill8()
+{
+	return;
+}
+
+static void drill9()
+{
+	return;
+}
+
+static void drill10()
+{
+	return;
+}
+
+static void drill11()
+{
 	return;
 }
