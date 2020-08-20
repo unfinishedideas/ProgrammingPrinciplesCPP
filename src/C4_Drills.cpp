@@ -55,13 +55,11 @@ static void CurrencyConverter()
 void CharLooper()
 {
 	int num = 97;
-	int i = 0;
-	while (i < 26)
+	for (int i = 0; i < 26; i++)
 	{
 		char currentLetter = (char)num;
 		std::cout << currentLetter << "\t" << num << std::endl;
 		++num;
-		++i;
 	}
 	return;
 }
