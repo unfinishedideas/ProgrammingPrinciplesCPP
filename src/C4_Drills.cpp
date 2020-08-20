@@ -2,11 +2,13 @@
 
 void SizeOfTypes();
 void CurrencyConverter();
+void CharLooper();
 
 void Chapter4Drills()
 {
 	//SizeOfTypes();
-	CurrencyConverter();
+	//CurrencyConverter();
+	CharLooper();
 	
 }
 
@@ -45,6 +47,21 @@ static void CurrencyConverter()
 			std::cout << "Hey no cheating!";
 			return;
 	}
+
 	std::cout << "That's $" << answer << ". Wow!";
+	return;
+}
+
+void CharLooper()
+{
+	int num = 97;
+	int i = 0;
+	while (i < 26)
+	{
+		char currentLetter = (char)num;
+		std::cout << currentLetter << "\t" << num << std::endl;
+		++num;
+		++i;
+	}
 	return;
 }
