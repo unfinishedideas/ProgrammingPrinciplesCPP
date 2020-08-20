@@ -1,17 +1,23 @@
 #include <iostream>
+#include <vector>
+#include <string>
+// needed for sort
+#include <algorithm>
 
 void sizeOfTypes();
 void currencyConverter();
 void charLooper();
 void crappySquare();
+void bigBrotherCensor();
 
 void Chapter4Drills()
 {
 	//sizeOfTypes();
 	//currencyConverter();
 	//charLooper();
-	crappySquare();
-	
+	//crappySquare();
+	bigBrotherCensor();
+
 }
 
 static void sizeOfTypes()
@@ -54,7 +60,7 @@ static void currencyConverter()
 	return;
 }
 
-void charLooper()
+static void charLooper()
 {
 	char currentLetter = 'a';
 	char currentUppercase = 'A';
@@ -67,7 +73,7 @@ void charLooper()
 	return;
 }
 
-void crappySquare()
+static void crappySquare()
 {
 	int num; 
 	int answer = 0;
@@ -81,5 +87,30 @@ void crappySquare()
 	
 	std::cout << "Your number: " << num << std::endl;
 	std::cout << "Squared is: " << answer << std::endl;
+	return;
+}
+
+static void bigBrotherCensor()
+{
+	std::vector<std::string> words;
+	std::cout << "alright let's see dem words: ";
+	
+	// this takes in as many words as you want until you press Ctrl-Z or Ctrl-D on linux
+	for (std::string temp; std::cin >> temp;)
+		words.push_back(temp);
+	std::cout << "Number of words: " << words.size() << std::endl;
+
+	std::sort(words.begin(), words.end());
+
+	for (int i = 0; i < words.size(); ++i)
+		// this removes duplicates from sorted words (just looks back at the last one)
+		if (i == 0 || words[i - 1] != words[i])
+			if (words[i] == "sprouts") {
+				std::cout << "BLEEEEPY\n";
+			}
+			else {
+				std::cout << words[i] << "\n";
+			}
+	
 	return;
 }
