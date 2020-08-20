@@ -1,18 +1,20 @@
 #include <iostream>
 
-void SizeOfTypes();
-void CurrencyConverter();
-void CharLooper();
+void sizeOfTypes();
+void currencyConverter();
+void charLooper();
+void crappySquare();
 
 void Chapter4Drills()
 {
-	//SizeOfTypes();
-	//CurrencyConverter();
-	CharLooper();
+	//sizeOfTypes();
+	//currencyConverter();
+	//charLooper();
+	crappySquare();
 	
 }
 
-static void SizeOfTypes()
+static void sizeOfTypes()
 {
 	std::cout << "char: " << sizeof(char) << std::endl;
 	std::cout << "int: " << sizeof(int) << std::endl;
@@ -21,7 +23,7 @@ static void SizeOfTypes()
 	std::cout << "long long int: " << sizeof(long long int) << std::endl;
 }
 
-static void CurrencyConverter()
+static void currencyConverter()
 {
 	char unit = ' ';
 	int value;
@@ -52,7 +54,7 @@ static void CurrencyConverter()
 	return;
 }
 
-void CharLooper()
+void charLooper()
 {
 	char currentLetter = 'a';
 	char currentUppercase = 'A';
@@ -62,5 +64,22 @@ void CharLooper()
 		currentLetter += 1;
 		currentUppercase += 1;
 	}
+	return;
+}
+
+void crappySquare()
+{
+	int num; 
+	int answer = 0;
+
+	std::cout << "gimme dat number: ";
+	std::cin >> num;
+	
+	for (int i = 0; i < num; i++) {
+		answer += num;
+	}
+	
+	std::cout << "Your number: " << num << std::endl;
+	std::cout << "Squared is: " << answer << std::endl;
 	return;
 }
