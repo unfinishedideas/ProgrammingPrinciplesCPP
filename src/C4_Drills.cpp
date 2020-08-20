@@ -26,24 +26,25 @@ static void CurrencyConverter()
 	constexpr double yenToDollar = .0094;
 	constexpr double kronerToDollar = .11;
 	constexpr double poundsToDollar = 1.31;
-	double answer = 0.0;
+	double answer;
 
 	std::cout << "Please enter a value follwed by a unit ([y]en, [k]roner or [p]ounds)\n";
 	std::cin >> value >> unit;
 
-	if (unit == 'y') {
-		answer = value * yenToDollar;
+	switch (unit) {
+		case 'y':
+			answer = value * yenToDollar;
+			break;
+		case 'k':
+			answer = value * kronerToDollar;
+			break;
+		case 'p':
+			answer = value * poundsToDollar;
+			break;
+		default:
+			std::cout << "Hey no cheating!";
+			return;
 	}
-	else if (unit == 'k') {
-		answer = value * kronerToDollar;
-	}
-	else if (unit == 'p') {
-		answer = value * poundsToDollar;
-	}
-	else {
-		std::cout << "Hey no cheating!";
-		return;
-	}
-	std::cout << "\nThat's $" << answer << ". Wow!";
+	std::cout << "That's $" << answer << ". Wow!";
 	return;
 }
