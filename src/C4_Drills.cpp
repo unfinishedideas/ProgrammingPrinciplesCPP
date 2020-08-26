@@ -205,7 +205,32 @@ static void drill5()
 
 static void drill6()
 {
+	std::cout << "Gimme dat number:\n";
 
+	double val = 0.0; 
+	double largest = 0.0, smallest = 0.0;
+	bool first = true;
+
+	while (std::cin >> val)
+	{
+		if (first == true) {
+			first = false;
+			largest = val;
+			smallest = val;
+			std::cout << "since this is the first value it is both the largest and smallest value\n";
+		} else if (val < smallest) {
+			smallest = val;
+			std::cout << val << " is the smallest so far\n";
+		} else if (val > largest) {
+			largest = val;
+			std::cout << val << " is the largest so far\n";
+		} else {
+			std::cout << smallest << " remains the smallest & ";
+			std::cout << largest << " remains the largest.\n";
+		}
+	}
+	
+	std::cout << "bye now";
 	return;
 }
 
