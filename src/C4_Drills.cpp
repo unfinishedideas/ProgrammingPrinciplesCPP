@@ -7,8 +7,8 @@
 // Presented are the drills and TryThis exercises from Chapter4
 
 void sizeOfTypes(), currencyConverter(), charLooper(), crappySquare(), bigBrotherCensor();
-void drill1(), drill2_and_3(), drill4(), drill5(), drill6(), drill7(), drill8(), drill8(), drill10(), drill11();
-// for drill 7
+void drill1(), drill2_and_3(), drill4(), drill5(), drill6(), drill7_8(), drill9(), drill10(), drill11();
+// for drill 7_8
 static bool legalUnit(std::string unit);
 static double convertUnitsToCm(std::string unit, double amount);
 
@@ -24,9 +24,8 @@ void Chapter4Drills()
 	//drill4();
 	//drill5();
 	//drill6();
-	drill7();
-	//drill8();
-	//drill9();
+	//drill7_8();
+	drill9();
 	//drill10();
 	//drill11();
 }
@@ -241,7 +240,7 @@ static void drill6()
 }
 
 // add units to the equation
-static void drill7()
+static void drill7_8()
 {
 	std::cout << "Gimme dat number followed by a unit: (cm)(m)(ft)(in):\n";
 
@@ -256,8 +255,6 @@ static void drill7()
 		// convert the unit to cm
 		if (weGood == true) {
 			val = convertUnitsToCm(unit, val);
-
-
 			if (first == true) {
 				first = false;
 				largest = val;
@@ -277,17 +274,21 @@ static void drill7()
 				std::cout << largest << "cm remains the largest.\n";
 			}
 		}
+		else {
+			std::cout << "don't give me crappy units\n";
+		}
 	}
 
 	std::cout << "bye now";
 	return;
 }
 
-// for drill 7
+// for drill 7-8
 static bool legalUnit(std::string unit)
 {
 	const std::vector<std::string> legal_units{ "cm", "m", "in", "ft" };
 	bool legal = false;
+	// this is a range for loop. It looks at each legal_unit (ie element) in the legal_units vector and checks them against the "unit" string
 	for (auto legal_unit : legal_units)
 	{
 		if (unit == legal_unit)
@@ -299,7 +300,7 @@ static bool legalUnit(std::string unit)
 	return legal;
 }
 
-// also for drill7
+// also for drill7_8 & 9
 static double convertUnitsToCm(std::string unit, double amount) 
 {
 	if (unit == "cm") {
@@ -320,13 +321,54 @@ static double convertUnitsToCm(std::string unit, double amount)
 	}
 }
 
-static void drill8()
-{
-	return;
-}
-
+// keep track of a sum too
 static void drill9()
 {
+	std::cout << "Gimme dat number followed by a unit: (cm)(m)(ft)(in):\n";
+
+	double val = 0.0;
+	double largest = 0.0, smallest = 0.0;
+	bool first = true;
+	double sum = 0;
+	std::string unit = " ";
+	std::vector<double> entries;
+
+	while (std::cin >> val >> unit)
+	{
+		bool weGood = legalUnit(unit);
+		// convert the unit to cm
+		if (weGood == true) {
+			val = convertUnitsToCm(unit, val);
+			if (first == true) {
+				first = false;
+				largest = val;
+				smallest = val;
+				std::cout << "since this is the first value it is both the largest and smallest value\n";
+			}
+			else if (val < smallest) {
+				smallest = val;
+				std::cout << val << "cm is the smallest so far\n";
+			}
+			else if (val > largest) {
+				largest = val;
+				std::cout << val << "cm is the largest so far\n";
+			}
+			else {
+				std::cout << smallest << "cm remains the smallest & ";
+				std::cout << largest << "cm remains the largest.\n";
+			}
+			entries.push_back(val);
+			sum += val;
+		}
+		else {
+			std::cout << "don't give me crappy units\n";
+		}
+	}
+	std::cout << "You entered: " << entries.size() << "values" << std::endl;
+	std::cout << "The smallest value you entered was: " << smallest << std::endl;
+	std::cout << "The largest value you entered was: " << largest << std::endl;
+	std::cout << "Added together they equal " << sum << std::endl;
+	std::cout << "bye now";
 	return;
 }
 
