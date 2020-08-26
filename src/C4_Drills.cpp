@@ -7,7 +7,7 @@
 // Presented are the drills and TryThis exercises from Chapter4
 
 void sizeOfTypes(), currencyConverter(), charLooper(), crappySquare(), bigBrotherCensor();
-void drill1(), drill2_and_3(), drill4(), drill5(), drill6(), drill7_8(), drill9(), drill10(), drill11();
+void drill1(), drill2_and_3(), drill4(), drill5(), drill6(), drill7_8(), drill9_10_11();
 // for drill 7_8
 static bool legalUnit(std::string unit);
 static double convertUnitsToCm(std::string unit, double amount);
@@ -25,9 +25,7 @@ void Chapter4Drills()
 	//drill5();
 	//drill6();
 	//drill7_8();
-	drill9();
-	//drill10();
-	//drill11();
+	drill9_10_11();
 }
 
 static void sizeOfTypes()
@@ -322,7 +320,7 @@ static double convertUnitsToCm(std::string unit, double amount)
 }
 
 // keep track of a sum too
-static void drill9()
+static void drill9_10_11()
 {
 	std::cout << "Gimme dat number followed by a unit: (cm)(m)(ft)(in):\n";
 
@@ -364,20 +362,15 @@ static void drill9()
 			std::cout << "don't give me crappy units\n";
 		}
 	}
-	std::cout << "You entered: " << entries.size() << "values" << std::endl;
+	std::sort(entries.begin(), entries.end());
+	std::cout << "You entered: " << entries.size() << " values" << std::endl;
 	std::cout << "The smallest value you entered was: " << smallest << std::endl;
 	std::cout << "The largest value you entered was: " << largest << std::endl;
 	std::cout << "Added together they equal " << sum << std::endl;
-	std::cout << "bye now";
-	return;
-}
-
-static void drill10()
-{
-	return;
-}
-
-static void drill11()
-{
+	std::cout << "Here is a sorted list of them: ";
+	for (int i = 0; i < entries.size(); i++) {
+		std::cout << "[" << entries[i] << "] ";
+	}
+	std::cout << std::endl << "bye now";
 	return;
 }
