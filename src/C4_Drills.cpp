@@ -8,7 +8,9 @@
 
 void sizeOfTypes(), currencyConverter(), charLooper(), crappySquare(), bigBrotherCensor();
 void drill1(), drill2_and_3(), drill4(), drill5(), drill6(), drill7(), drill8(), drill8(), drill10(), drill11();
-
+// for drill 7
+static bool legalUnit(std::string unit);
+static double convertUnitsToCm(std::string unit, double amount);
 
 void Chapter4Drills()
 {
@@ -21,8 +23,8 @@ void Chapter4Drills()
 	//drill2_and_3();
 	//drill4();
 	//drill5();
-	drill6();
-	//drill7();
+	//drill6();
+	drill7();
 	//drill8();
 	//drill9();
 	//drill10();
@@ -139,6 +141,7 @@ static void drill1()
 	return;
 }
 
+// compare ints
 static void drill2_and_3()
 {
 	std::cout << "Gimme 2 of dem numbers:\n";
@@ -159,6 +162,7 @@ static void drill2_and_3()
 	return;
 }
 
+// do the comparison with doubles
 static void drill4()
 {
 	std::cout << "Gimme 2 of dem numbers:\n";
@@ -179,6 +183,7 @@ static void drill4()
 	return;
 }
 
+// track almost =
 static void drill5()
 {
 	std::cout << "Gimme 2 of dem numbers:\n";
@@ -203,6 +208,7 @@ static void drill5()
 	return;
 }
 
+// track smallest and largest number
 static void drill6()
 {
 	std::cout << "Gimme dat number:\n";
@@ -234,9 +240,84 @@ static void drill6()
 	return;
 }
 
+// add units to the equation
 static void drill7()
 {
+	std::cout << "Gimme dat number followed by a unit: (cm)(m)(ft)(in):\n";
+
+	double val = 0.0;
+	double largest = 0.0, smallest = 0.0;
+	bool first = true;
+	std::string unit = " ";
+
+	while (std::cin >> val >> unit)
+	{
+		bool weGood = legalUnit(unit);
+		// convert the unit to cm
+		if (weGood == true) {
+			val = convertUnitsToCm(unit, val);
+
+
+			if (first == true) {
+				first = false;
+				largest = val;
+				smallest = val;
+				std::cout << "since this is the first value it is both the largest and smallest value\n";
+			}
+			else if (val < smallest) {
+				smallest = val;
+				std::cout << val << "cm is the smallest so far\n";
+			}
+			else if (val > largest) {
+				largest = val;
+				std::cout << val << "cm is the largest so far\n";
+			}
+			else {
+				std::cout << smallest << "cm remains the smallest & ";
+				std::cout << largest << "cm remains the largest.\n";
+			}
+		}
+	}
+
+	std::cout << "bye now";
 	return;
+}
+
+// for drill 7
+static bool legalUnit(std::string unit)
+{
+	const std::vector<std::string> legal_units{ "cm", "m", "in", "ft" };
+	bool legal = false;
+	for (auto legal_unit : legal_units)
+	{
+		if (unit == legal_unit)
+		{
+			legal = true;
+		}
+
+	}
+	return legal;
+}
+
+// also for drill7
+static double convertUnitsToCm(std::string unit, double amount) 
+{
+	if (unit == "cm") {
+		return amount;
+	}
+	else if (unit == "m") {
+		return amount * 100;
+	}
+	else if (unit == "in") {
+		return amount * 2.54;
+	}
+	else if (unit == "ft") {
+		return (amount * 12) * 2.54;
+	}
+	else {
+		std::cout << "something went horribly wrong with convertUnitsToCm";
+		return amount * 666;
+	}
 }
 
 static void drill8()
