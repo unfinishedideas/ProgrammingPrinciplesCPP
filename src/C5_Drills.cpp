@@ -5,8 +5,11 @@
 #include <algorithm>
 
 void drill1(), drill2(), drill3(), drill4(), drill5(), drill6(), drill7(), drill8(), drill9(), drill10(), drill11(), drill12(), drill13(), drill14();
-void tryThis1();
-int area(int length, int width);
+void tryThis();
+int area(int length, int width); 
+int f(int x, int y, int z);
+void logError(std::string);
+int framed_area(int x, int y);
 
 
 void Chapter5Drills()
@@ -26,20 +29,29 @@ void Chapter5Drills()
 	//drill13();
 	//drill14();
 
-	tryThis1();
+	tryThis();
 	return;
 }
 
-void tryThis1()
+void tryThis()
 {
 	// try out the compiler errors on p 137
 	//int s1 = area(7;
-	 //int s2 = area(7)
-	 //Int s3 = area(7);
-	 //int s4 = area('7);
+	//int s2 = area(7)
+	//Int s3 = area(7);
+	//int s4 = area('7);
+	
 	//int x0 = arena(7);
 	//int x1 = area(7);
 	//int x2 = area("seven", 2);
+
+	//int x4 = area(10, -7);
+	//int x5 = area(10.7, 9.3);
+	//char x6 = area(100, 9999);
+	//std::cout << "x4" << x4 << std::endl;
+	//std::cout << "x5" << x5 << std::endl;
+	//std::cout << "x6" << x6 << std::endl;
+
 
 
 	return;
@@ -47,7 +59,36 @@ void tryThis1()
 
 int area(int length, int width)
 {
+	if (length <= 0 || width <= 0) {
+		logError("negative values in area()");
+	}
 	return length * width;
+}
+
+int framed_area(int x, int y)
+{
+	constexpr int frame_width = 2;
+	if (x - frame_width <= 0 || y - frame_width <= 0) {
+		logError("non-positive area() argumentcalled by framed_area()");
+	}
+	return area(x - frame_width, y - frame_width);
+}
+
+int f(int x, int y, int z)
+{
+	int area1 = area(x, y);
+	if (area1 <= 0) {
+		logError("non-positive area");
+	}
+	int area2 = framed_area(1, z);
+	int area3 = framed_area(y, z);
+	double ratio = double(area1) / area3;
+	return 1;
+}
+
+void logError(std::string message)
+{
+	throw std::runtime_error(message);	
 }
 
 void drill1()
