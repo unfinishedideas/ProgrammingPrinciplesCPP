@@ -5,6 +5,9 @@
 #include <algorithm>
 
 void drill1(), drill2(), drill3(), drill4(), drill5(), drill6(), drill7(), drill8(), drill9(), drill10(), drill11(), drill12(), drill13(), drill14();
+void tryThis1();
+int area(int length, int width);
+
 
 void Chapter5Drills()
 {
@@ -22,7 +25,29 @@ void Chapter5Drills()
 	//drill12();
 	//drill13();
 	//drill14();
+
+	tryThis1();
 	return;
+}
+
+void tryThis1()
+{
+	// try out the compiler errors on p 137
+	//int s1 = area(7;
+	 //int s2 = area(7)
+	 //Int s3 = area(7);
+	 //int s4 = area('7);
+	//int x0 = arena(7);
+	//int x1 = area(7);
+	//int x2 = area("seven", 2);
+
+
+	return;
+}
+
+int area(int length, int width)
+{
+	return length * width;
 }
 
 void drill1()
