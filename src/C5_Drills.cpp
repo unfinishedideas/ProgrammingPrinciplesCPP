@@ -1,33 +1,33 @@
-#include <iostream>
-#include <vector>
-#include <string>
-// needed for sort
-#include <algorithm>
+//#include <iostream>
+//#include <vector>
+//#include <string>
+//// needed for sort
+//#include <algorithm>
+#include "Drills.h"
 
-void drill1(), drill2(), drill3(), drill4(), drill5(), drill6(), drill7(), drill8(), drill9(), drill10(), drill11(), drill12(), drill13(), drill14();
+static void drill_5_1(), drill_5_2(), drill_5_3(), drill_5_4(), drill_5_5(), drill_5_6(), drill_5_7(), drill_5_8(), drill_5_9(), drill_5_10(), drill_5_11(), drill_5_12(), drill_5_13(), drill_5_14();
 void tryThis();
 int area(int length, int width); 
 int f(int x, int y, int z);
-void logError(std::string);
 int framed_area(int x, int y);
 
 
 void Chapter5Drills()
 {
-	//drill1();
-	//drill2();
-	//drill3();
-	//drill4();
-	//drill5();
-	//drill6();
-	//drill7();
-	//drill8();
-	//drill9();
-	//drill10();
-	//drill11();
-	//drill12();
-	//drill13();
-	//drill14();
+	//drill_5_1();
+	//drill_5_2();
+	//drill_5_3();
+	//drill_5_4();
+	//drill_5_5();
+	//drill_5_6();
+	//drill_5_7();
+	//drill_5_8();
+	//drill_5_9();
+	//drill_5_10();
+	//drill_5_11();
+	//drill_5_12();
+	//drill_5_13();
+	//drill_5_14();
 
 	tryThis();
 	return;
@@ -52,7 +52,9 @@ void tryThis()
 	//std::cout << "x5" << x5 << std::endl;
 	//std::cout << "x6" << x6 << std::endl;
 
-
+	f(1, 1, 1);
+	f(-1, 1, 1);
+	f(1, -1, 1);
 
 	return;
 }
@@ -60,7 +62,7 @@ void tryThis()
 int area(int length, int width)
 {
 	if (length <= 0 || width <= 0) {
-		logError("negative values in area()");
+		error("negative values in area()");
 	}
 	return length * width;
 }
@@ -69,7 +71,7 @@ int framed_area(int x, int y)
 {
 	constexpr int frame_width = 2;
 	if (x - frame_width <= 0 || y - frame_width <= 0) {
-		logError("non-positive area() argumentcalled by framed_area()");
+		error("non-positive area() argumentcalled by framed_area()");
 	}
 	return area(x - frame_width, y - frame_width);
 }
@@ -78,7 +80,7 @@ int f(int x, int y, int z)
 {
 	int area1 = area(x, y);
 	if (area1 <= 0) {
-		logError("non-positive area");
+		error("non-positive area");
 	}
 	int area2 = framed_area(1, z);
 	int area3 = framed_area(y, z);
@@ -86,91 +88,86 @@ int f(int x, int y, int z)
 	return 1;
 }
 
-void logError(std::string message)
+static void drill_5_1()
 {
-	throw std::runtime_error(message);	
-}
-
-void drill1()
-{
-	std::cout << "drill 1" << std::endl;
+	std::cout << "drill_5_1" << std::endl;
 	return;
 }
 
-void drill2()
+static void drill_5_2()
 {
-	std::cout << "drill 2" << std::endl;
+	std::cout << "drill_5_2" << std::endl;
 	return;
 }
 
-void drill3()
+static void drill_5_3()
 {
-	std::cout << "drill 3" << std::endl;
+	std::cout << "drill_5_3" << std::endl;
 	return;
 }
 
-void drill4()
+static void drill_5_4()
 {
-	std::cout << "drill 4" << std::endl;
+	std::cout << "drill_5_4" << std::endl;
 	return;
 }
 
-void drill5()
+static void drill_5_5()
 {
-	std::cout << "drill 5" << std::endl;
+	std::cout << "drill_5_5" << std::endl;
 	return;
 }
 
-void drill6()
+static void drill_5_6()
 {
-	std::cout << "drill 6" << std::endl;
+	std::cout << "drill_5_6" << std::endl;
 	return;
 }
 
-void drill7()
+static void drill_5_7()
 {
-	std::cout << "drill 7" << std::endl;
+	std::cout << "drill_5_7" << std::endl;
 	return;
 }
 
-void drill8()
+static void drill_5_8()
 {
-	std::cout << "drill 8" << std::endl;
+	std::cout << "drill_5_8" << std::endl;
 	return;
 }
 
-void drill9()
+static void drill_5_9()
 {
-	std::cout << "drill 9" << std::endl;
+	std::cout << "drill_5_9" << std::endl;
 	return;
 }
 
-void drill10()
+static void drill_5_10()
 {
-	std::cout << "drill 10" << std::endl;
+	std::cout << "drill_5_10" << std::endl;
 	return;
 }
 
-void drill11()
+static void drill_5_11()
 {
-	std::cout << "drill 11" << std::endl;
+	std::cout << "drill_5_11" << std::endl;
 	return;
 }
 
-void drill12()
+static void drill_5_12()
 {
-	std::cout << "drill 12" << std::endl;
+	std::cout << "drill_5_12" << std::endl;
 	return;
 }
 
-void drill13()
+static void drill_5_13()
 {
-	std::cout << "drill 13" << std::endl;
+	std::cout << "drill_5_13" << std::endl;
 	return;
 }
 
-void drill14()
+static void drill_5_14()
 {
-	std::cout << "drill 14" << std::endl;
+	std::cout << "drill_5_14" << std::endl;
 	return;
 }
