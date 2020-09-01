@@ -52,7 +52,7 @@ void tryThis()
 	//std::cout << "x5" << x5 << std::endl;
 	//std::cout << "x6" << x6 << std::endl;
 
-
+	f(1, 1, -1);
 
 	return;
 }
@@ -88,7 +88,7 @@ int f(int x, int y, int z)
 
 void logError(std::string message)
 {
-	throw std::runtime_error(message);	
+	std::cout << "ERR: " << message << std::endl;
 }
 
 void drill1()
