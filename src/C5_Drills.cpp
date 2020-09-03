@@ -11,6 +11,7 @@ int f(int x, int y, int z);
 void logError(std::string);
 int framed_area(int x, int y);
 
+class Bad_area {};
 
 void Chapter5Drills()
 {
@@ -52,7 +53,20 @@ void tryThis()
 	//std::cout << "x5" << x5 << std::endl;
 	//std::cout << "x6" << x6 << std::endl;
 
-	f(1, 1, -1);
+	//f(1, 1, -1);
+
+	try {
+		int x = -1;
+		int y = 2;
+		int z = 4;
+		int area1 = area(x, y);
+		int area2 = framed_area(1, z);
+		int area3 = framed_area(y, z);
+		double ratio = area1 / area3;
+	}
+	catch (Bad_area) {
+		std::cout << "Oops! Had bad arguments to area()!\n";
+	}
 
 	return;
 }
@@ -60,7 +74,7 @@ void tryThis()
 int area(int length, int width)
 {
 	if (length <= 0 || width <= 0) {
-		logError("negative values in area()");
+		throw Bad_area{};
 	}
 	return length * width;
 }
