@@ -10,6 +10,7 @@ int area(int length, int width);
 int f(int x, int y, int z);
 void logError(std::string);
 int framed_area(int x, int y);
+void simpleError(std::string s);
 
 class Bad_area {};
 
@@ -72,11 +73,13 @@ void tryThis()
 	//std::cout << "gimme double";
 	//std::cin >> d;
 	//if (std::cin) {
-	//	std::cout << "thanks for the double\n";
+	//	std::cout << "thanks for the double?\n" << typeid(d).name() << std::endl;
 	//}
 	//else {
-	//	std::cout << "where's my double?\n";
+	//	std::cout << "where's my double?\n" << typeid(d).name() << std::endl;
 	//}
+
+
 
 	return;
 }
@@ -113,6 +116,11 @@ int f(int x, int y, int z)
 void logError(std::string message)
 {
 	std::cout << "ERR: " << message << std::endl;
+}
+
+void simpleError(std::string s)
+{
+	throw std::runtime_error(s);
 }
 
 void drill1()
