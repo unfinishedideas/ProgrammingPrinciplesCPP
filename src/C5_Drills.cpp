@@ -55,18 +55,28 @@ void tryThis()
 
 	//f(1, 1, -1);
 
-	try {
-		int x = -1;
-		int y = 2;
-		int z = 4;
-		int area1 = area(x, y);
-		int area2 = framed_area(1, z);
-		int area3 = framed_area(y, z);
-		double ratio = area1 / area3;
-	}
-	catch (Bad_area) {
-		std::cout << "Oops! Had bad arguments to area()!\n";
-	}
+	//try {
+	//	int x = -1;
+	//	int y = 2;
+	//	int z = 4;
+	//	int area1 = area(x, y);
+	//	int area2 = framed_area(1, z);
+	//	int area3 = framed_area(y, z);
+	//	double ratio = area1 / area3;
+	//}
+	//catch (Bad_area) {
+	//	std::cout << "Oops! Had bad arguments to area()!\n";
+	//}
+
+	//double d = 0;
+	//std::cout << "gimme double";
+	//std::cin >> d;
+	//if (std::cin) {
+	//	std::cout << "thanks for the double\n";
+	//}
+	//else {
+	//	std::cout << "where's my double?\n";
+	//}
 
 	return;
 }
