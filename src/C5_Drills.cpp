@@ -3,6 +3,7 @@
 #include <string>
 // needed for sort
 #include <algorithm>
+#include<stdexcept>
 
 void drill1(), drill2(), drill3(), drill4(), drill5(), drill6(), drill7(), drill8(), drill9(), drill10(), drill11(), drill12(), drill13(), drill14();
 void tryThis();
@@ -12,6 +13,7 @@ void logError(std::string);
 int framed_area(int x, int y);
 void simpleError(std::string s);
 void calculateTemps();
+void errorScaffolding();
 
 class Bad_area {};
 
@@ -80,7 +82,10 @@ void tryThis()
 	//	std::cout << "where's my double?\n" << typeid(d).name() << std::endl;
 	//}
 
-	calculateTemps();
+	//calculateTemps();  //p.156
+
+	// try this p.167: values that work with the preconditon (length and width positive) but fail post condition (returns a positive value that is the area)
+	// anything that will overload the returning int :)   9999999999 x 9999999999
 
 	return;
 }
@@ -143,6 +148,26 @@ void calculateTemps()
 	std::cout << "Low temp: " << low_temp << std::endl;
 	std::cout << "Average temp: " << sum / no_of_temps << std::endl;
 } 
+
+// Below are 25 code fragments. Each is meant to be inserted into this scaffolding.
+int errorScaffolding()
+{
+	try {
+		// your code here
+		std::cin.get();
+		return 0;
+	}
+	catch (std::exception& e) {
+		std::cerr << "error: " << e.what() << '\n';
+		std::cin.get();
+		return 1;
+	}
+	catch (...) {
+		std::cerr << "Oops: unknown exception!\n";
+		std::cin.get();
+		return 2;
+	}
+}
 
 void drill1()
 {
