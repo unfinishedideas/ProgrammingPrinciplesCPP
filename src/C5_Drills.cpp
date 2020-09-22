@@ -11,6 +11,7 @@ int f(int x, int y, int z);
 void logError(std::string);
 int framed_area(int x, int y);
 void simpleError(std::string s);
+void calculateTemps();
 
 class Bad_area {};
 
@@ -79,7 +80,7 @@ void tryThis()
 	//	std::cout << "where's my double?\n" << typeid(d).name() << std::endl;
 	//}
 
-
+	calculateTemps();
 
 	return;
 }
@@ -122,6 +123,26 @@ void simpleError(std::string s)
 {
 	throw std::runtime_error(s);
 }
+
+void calculateTemps()
+{
+	double sum = 0;
+	// initialize these to impossibly high and low to prevent bad output
+	double high_temp = -10000;
+	double low_temp = 10000;
+	int no_of_temps = 0;
+
+	for (double temp; std::cin >> temp;) {
+		++no_of_temps;
+		sum += temp;
+		if (temp > high_temp) high_temp = temp;
+		if (temp < low_temp) low_temp = temp;
+	}
+
+	std::cout << "High temp: " << high_temp << std::endl;
+	std::cout << "Low temp: " << low_temp << std::endl;
+	std::cout << "Average temp: " << sum / no_of_temps << std::endl;
+} 
 
 void drill1()
 {
