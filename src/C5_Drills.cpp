@@ -28,8 +28,8 @@ void Chapter5Drills()
 	//drill1();
 	//drill2();
 	//drill3();
-	drill4();
-	//drill5();
+	//drill4();
+	drill5();
 	//drill6();
 	//drill7();
 	//drill8();
@@ -327,8 +327,34 @@ double ctokWithCheck(double c)
 
 void drill5()
 {
-	std::cout << "drill 5" << std::endl;
-	return;
+	// Ehhh I got lazy. They kind of set up error handling to exclusively use the stuff they build in std_lib_facilities but haven't shown how to share that between files yet.
+
+	// Add the ability to convert from C to K instead of just K to C
+	//std::cout << "drill 5" << std::endl << "Enter a unit. (c)elsius or (k)elvin: ";
+	//char unit;
+	//std::cin >> unit;
+	//std::cout << "\nEnter a value as a double: ";
+	//double value;
+	//std::cin >> value;
+	//
+	//try {
+	//	if (unit != 'k' || unit != 'c') {
+	//		throw "\nneed a better unity dangit!";
+	//	}
+	//}
+	//catch (std::string err) {
+	//	std::cerr << err;
+	//}
+	//return;	
+}
+
+double ktocWithCheck(double k)
+{
+	if (k <= 0) {
+		throw k;
+	}
+	double c = k - 273.13;
+	return c;
 }
 
 void drill6()
