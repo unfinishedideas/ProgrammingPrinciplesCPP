@@ -3,3 +3,4 @@
 void Chapter3Drills();
 void Chapter4Drills();
 void Chapter5Drills();
+void Chapter6Drills();

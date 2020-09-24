@@ -154,6 +154,7 @@
     <ClCompile Include="src\C3_Drills.cpp" />
     <ClCompile Include="src\C4_Drills.cpp" />
     <ClCompile Include="src\C5_Drills.cpp" />
+    <ClCompile Include="src\C6_Drills.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

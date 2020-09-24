@@ -35,5 +35,8 @@
     <ClCompile Include="src\C5_Drills.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\C6_Drills.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
