@@ -27,8 +27,8 @@ void Chapter5Drills()
 
 	//drill1();
 	//drill2();
-	drill3();
-	//drill4();
+	//drill3();
+	drill4();
 	//drill5();
 	//drill6();
 	//drill7();
@@ -300,20 +300,29 @@ void drill3()
 	return;
 }
 
-double ctokWithCheck(double c)
-{
-	// the error prone version it gives
-	//int k = c + 273.13;
-	//return int;	
-
-	double k = c + 273.13;
-	return k;
-}
-
 void drill4()
 {
-	std::cout << "drill 4" << std::endl;
+	// put the check inside of ctok instead
+	std::cout << "drill 4" << std::endl << "Enter a double: ";
+	try {
+		double c;
+		std::cin >> c;
+		double k = ctokWithCheck(c);
+		std::cout << k << '/n';
+	}
+	catch (double e){
+		std::cerr << e << " is too low a value!";
+	}
 	return;
+}
+
+double ctokWithCheck(double c)
+{	
+	if (c <= -273.15) {
+		throw c;
+	}
+	double k = c + 273.13;
+	return k;
 }
 
 void drill5()
