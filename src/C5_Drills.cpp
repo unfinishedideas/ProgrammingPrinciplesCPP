@@ -17,6 +17,7 @@ int errorsTime();
 
 // drills stuff
 double ctok(double c);
+double ctokWithCheck(double c);
 
 class Bad_area {};
 
@@ -282,8 +283,31 @@ double ctok(double c)
 
 void drill3()
 {
-	std::cout << "drill 3" << std::endl;
+	std::cout << "drill 3" << std::endl << "enter double: ";
+	// add in a check to prevent values under -273.15c
+	double c;
+	try {
+		std::cin >> c;
+		if (c <= -273.15) {
+			throw c;
+		}
+		double k = ctok(c);
+		std::cout << k << '/n';
+	}
+	catch (double e) {
+		std::cerr << "You entered " << e << " a value under -273.15... aka ABSOLUTE ZERO YOU CLAUDE!";
+	}
 	return;
+}
+
+double ctokWithCheck(double c)
+{
+	// the error prone version it gives
+	//int k = c + 273.13;
+	//return int;	
+
+	double k = c + 273.13;
+	return k;
 }
 
 void drill4()
