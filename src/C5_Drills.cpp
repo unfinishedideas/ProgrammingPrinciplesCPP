@@ -13,15 +13,20 @@ void logError(std::string);
 int framed_area(int x, int y);
 void simpleError(std::string s);
 void calculateTemps();
-void errorScaffolding();
+int errorsTime();
+
+// drills stuff
+double ctok(double c);
 
 class Bad_area {};
 
 void Chapter5Drills()
 {
+	//errorsTime();
+
 	//drill1();
 	//drill2();
-	//drill3();
+	drill3();
 	//drill4();
 	//drill5();
 	//drill6();
@@ -34,7 +39,7 @@ void Chapter5Drills()
 	//drill13();
 	//drill14();
 
-	tryThis();
+	//tryThis();
 	return;
 }
 
@@ -149,11 +154,84 @@ void calculateTemps()
 	std::cout << "Average temp: " << sum / no_of_temps << std::endl;
 } 
 
-// Below are 25 code fragments. Each is meant to be inserted into this scaffolding.
-int errorScaffolding()
+// Below are 25 code fragments. Each is meant to be inserted into this scaffolding. p.168
+//int errorScaffolding()
+//{
+//	try {
+//		// your code here
+//		std::cin.get();
+//		return 0;
+//	}
+//	catch (std::exception& e) {
+//		std::cerr << "error: " << e.what() << '\n';
+//		std::cin.get();
+//		return 1;
+//	}
+//	catch (...) {
+//		std::cerr << "Oops: unknown exception!\n";
+//		std::cin.get();
+//		return 2;
+//	}
+//}
+
+int errorsTime()
 {
 	try {
-		// your code here
+		//// 1
+		//std::Cout << "Success!\n";
+		//// 2
+		//std::cout << "Success!\n;
+		//// 3
+		//std::cout << "Success" << !\n"
+		//// 4
+		//std::cout << success << '\n';
+		//// 5
+		//std::string res = 7; 
+		//std::vector<int> v(10);
+		//v[5] = res;
+		//std::cout << "Success!\n";
+		//// 6
+		//std::vector<int> v(10);
+		//v(5) = 7;
+		//if (v(5) != 7) std::cout << "Success!\n";
+		//// 7
+		//
+		//// 8
+		//
+		//// 9
+		//
+		//// 10
+		//
+		//// 11
+		//
+		//// 12
+		//
+		//// 13
+		//
+		//// 14
+		//
+		//// 15
+		//
+		//// 16
+		//
+		//// 17
+		//
+		//// 18
+		//
+		//// 19
+		//
+		//// 20
+		//
+		//// 21
+		//
+		//// 22
+		//
+		//// 23
+		//
+		//// 24
+		//
+		//// 25
+		
 		std::cin.get();
 		return 0;
 	}
@@ -171,14 +249,35 @@ int errorScaffolding()
 
 void drill1()
 {
-	std::cout << "drill 1" << std::endl;
+	std::cout << "drill 1: Try this exercises" << std::endl;
+	tryThis();
 	return;
 }
 
 void drill2()
 {
-	std::cout << "drill 2" << std::endl;
+	std::cout << "drill 2" << std::endl << "enter double: ";
+	//The broken code they give you
+	//double c = 0;
+	//std::cin >> d;
+	//double k = ctok("c");
+	//Cout << k << '/n';	
+
+	double c;
+	std::cin >> c;
+	double k = ctok(c);
+	std::cout << k << '/n';
 	return;
+}
+
+double ctok(double c)
+{
+	// the error prone version it gives
+	//int k = c + 273.13;
+	//return int;	
+
+	double k = c + 273.13;
+	return k;
 }
 
 void drill3()
